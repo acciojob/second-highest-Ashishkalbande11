@@ -10,6 +10,23 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+			if(arr.length < 2) return -Infinity;
+
+			let secHigh = -Infinity;
+			let high = -Infinity;
+			for(let i=0; i<arr.length; i++){
+			    let num = parseInt(arr[i]);
+			    if(num > high){
+			        secHight = high;
+			        high = num;
+			    }else if(num > secHigh){
+			        secHigh = num;
+			    }
+			}
+			if(secHigh === -Infinity){
+			    return -Infinity;
+			}
+			return secHigh;
 			
 		}
 
